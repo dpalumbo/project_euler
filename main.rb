@@ -36,6 +36,30 @@ def euler3
 	return result
 end
 
+def euler4
+	def is_palindrome?(x)
+		n=x.length
+		for i in 0..(n/2).floor
+			return false unless x[i]==x[n-i-1]
+		end
+		return true
+	end
+	champ = 0
+	for i in 100..999
+		for j in i..999
+			product = i*j
+			if is_palindrome?(product.to_s)
+				champ = product if product > champ
+			end
+		end
+	end
+	return champ
+end
+
+def euler5	
+	return i= 2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 *17 * 19 #just the prime factors that cover all 20
+end
+
 def euler31
 	coins = [1,2,5,10,20,50,100,200]
 	sums = [0]
