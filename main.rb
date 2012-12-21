@@ -3,11 +3,37 @@ def euler1
 	for i in 1..999
 		nums.push(i) if i%3==0 || i%5==0	
 	end
-	puts nums.inject(:+)
+	return nums.inject(:+)
 end
 
 def euler2
+	fib = [] 
+	fib[0] = 1
+	fib[1] = 1
+	total = 0
+	i = 1
 
+	while fib[i]<4000000
+		total += fib[i] if fib[i] % 2 == 0
+		i+=1
+		fib[i] = fib[i-1] + fib[i-2]
+	end
+
+	return total
+end
+
+def euler3
+	i = 2
+	num = 600851475143
+	result = 0
+	while num > 1
+		while num % i == 0
+			num = num/i 
+			result = i
+		end
+		i+=1
+	end
+	return result
 end
 
 def euler31
@@ -27,5 +53,5 @@ def euler31
 		end
 		sums.push(tempsums).flatten!	
 	end
-	puts count.to_s
+	return count
 end
