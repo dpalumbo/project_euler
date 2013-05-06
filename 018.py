@@ -35,7 +35,3 @@ for line in f:
     prev = [head]
 
 print head.get_max_path()
-
-
-
-

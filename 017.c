@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main()
-{
+int main(){
 	int total = 0, i = 0;
 	//Allocating more memory than necessary, just for clarity
 	int map[1001];
@@ -38,30 +37,24 @@ int main()
 	map[100] = 7;
 	map[1000] = 8;
 
-	for(i=1;i<=1000;i++)
-	{
+	for(i=1;i<=1000;i++){
 		//tens and ones place
-		if(i%100<20 && i%100>0)
-		{
+		if(i%100<20 && i%100>0){
 			total += map[i%100];
 		}
-		else if (i%100 != 0)
-		{
+		else if (i%100 != 0){
 			total+=map[(i%100)/10 * 10]  + map[i%10];
 		}
 		//hundreds place
-		if((i%1000)/100 > 0)
-		{
+		if((i%1000)/100 > 0){
 			total+= map[(i%1000)/100] + map[100];
-			if(i%100!=0 && i>99)
-			{
+			if(i%100!=0 && i>99){
 				// + 3 for "and"
 				total += 3;
 			}
 		}
 		//thousands place
-		if((i%10000)/1000 > 0)
-		{
+		if((i%10000)/1000 > 0){
 			total += map[(i%10000)/1000] + map[1000];
 		}
 	}
