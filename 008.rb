@@ -21,8 +21,8 @@ input = "73167176531330624919225119674426574742355349194934
 
 champ = 0
 for i in 1..(input.length-6)
-	product = input[i].to_i * input[i+1].to_i * input[i+2].to_i * input[i+3].to_i * input[i+4].to_i
-	champ = product if product > champ
+  product = input[i].to_i * input[i+1].to_i * input[i+2].to_i * input[i+3].to_i * input[i+4].to_i
+  champ = product if product > champ
 end
 
 puts champ
